@@ -129,10 +129,12 @@ h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif; line-height:1.15; margin:
 }
 @keyframes ping{0%{transform:scale(.6);opacity:.7}70%{transform:scale(1.5);opacity:0}100%{opacity:0}}
 
-h1{font-size:clamp(2.1rem,5.6vw,3.5rem); font-weight:700}
-h1 .last{
-  background:linear-gradient(100deg,var(--accent),var(--accent-2));
-  -webkit-background-clip:text; background-clip:text; color:transparent;
+h1{font-size:clamp(2.1rem,5.6vw,3.5rem); font-weight:700; color:var(--accent)}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  h1{
+    background:linear-gradient(100deg,var(--accent),var(--accent-2));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
 }
 .role{
   margin:.9rem 0 0; font-size:clamp(1rem,2.1vw,1.16rem); color:var(--ink-soft);
@@ -288,6 +290,7 @@ footer a:hover{color:var(--accent)}
   .js .reveal{opacity:1; transform:none}
   body::before,.topbar,.term,.contact .links,.toggle{display:none}
   body{background:#fff; color:#000}
+  h1{background:none; color:#000; -webkit-text-fill-color:#000}
   .card,.stats{box-shadow:none}
   section{padding:1.2rem 0}
 }
@@ -339,7 +342,7 @@ footer a:hover{color:var(--accent)}
     <div class="hero-grid">
       <div>
         <div class="status"><span class="dot"></span> <span data-pt="Aberto a vagas júnior de desenvolvimento de software, DevOps e DevSecOps">Open to junior software development, DevOps &amp; DevSecOps roles</span></div>
-        <h1>Victor Raphael<br>Pedroso <span class="last">de Lima</span></h1>
+        <h1>Victor Raphael<br>Pedroso de Lima</h1>
         <p class="role" data-pt="Instrutor de Engenharia de Software <span>·</span> DevOps e Infraestrutura em Nuvem">Software Engineering Instructor <span>·</span> DevOps &amp; Cloud Infrastructure</p>
         <p class="summary" data-pt="Engenheiro de software com background em DevOps e experiência prática operando infraestrutura em nuvem de larga escala para aproximadamente <b>6.000 usuários simultâneos</b>. Construo e mantenho pipelines de CI/CD no GitLab, containerizo aplicações com Docker e Kubernetes (GKE), implemento observabilidade para detecção precoce de incidentes e entrego releases com GitOps e ArgoCD. Hoje ensino e documento essa mesma stack como Instrutor de Engenharia de Software.">
           Software engineer with a DevOps background and hands-on experience operating large-scale cloud
